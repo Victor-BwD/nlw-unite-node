@@ -1,0 +1,38 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+    "title": "Unite vitor",
+    "details": "Um evento",
+    "maximumAttendees": 100
+}
+
+###
+
+POST http://localhost:3333/events/456bb299-6b17-43f1-9860-e9d6969692e2/attendees
+Content-Type: application/json
+
+{
+    "name": "João",
+    "email": "joao123@gmail.com"
+}
+
+###
+
+
+GET http://localhost:3333/events/456bb299-6b17-43f1-9860-e9d6969692e2
+
+###
+
+
+GET http://localhost:3333/attendees/3/badge
+
+###
+
+
+GET http://localhost:3333/attendees/3/check-in
+
+###
+
+
+GET http://localhost:3333/events/456bb299-6b17-43f1-9860-e9d6969692e2/attendees?query=João
