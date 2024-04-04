@@ -6,6 +6,8 @@ import { prisma } from "../lib/prisma";
 export async function getEventAttendees(app: FastifyInstance) {
     app.withTypeProvider<ZodTypeProvider>().get("/events/:eventId/attendees", {
         schema: {
+            summary: 'Traz a lista de participantes de um evento específico',
+            tags: ['Attendees'],
             params: z.object({
                 eventId: z.string().uuid(),
             }),
